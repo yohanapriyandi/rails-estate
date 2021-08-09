@@ -28,6 +28,17 @@
   </div>
 
   <div class="form-group">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+    <%= form.label :photo %>
+    <%= form.file_field :photo, class: "form-control form-control-sm" %>
+    <%= form.hidden_field :photo_cache%>
+
+    <% if @property.photo.present? %>
+      <%= image_tag @property.photo.thumb.url, class: "mt-4" %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Save Property", class: "btn btn-success" %>
+    <%= link_to 'Cancel', properties_path, class: "btn btn-warning"  %>
   </div>
 <% end %>
