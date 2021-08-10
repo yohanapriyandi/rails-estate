@@ -5,4 +5,7 @@
 
 import Rails from "@rails/ujs"
 
+require("jquery");
+require("./icludes/properties");
+
 Rails.start()
