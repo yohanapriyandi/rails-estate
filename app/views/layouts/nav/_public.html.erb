@@ -1,55 +1,38 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <%= link_to "Rails Estate", root_path, class: "navbar-brand"%>      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<header class="p-3 bg-dark text-white">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+      </a>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <% if account_signed_in? %>
-          <li class="nav-item active">      
-            <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
-          </li>
-          <%else%>
-          <li class="nav-item active">      
-            <%= link_to "Home", root_path, class: "nav-link"%>
-          </li>
-          <%end%>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#">Latest</a>
-          </li>          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
-          </li>
-           <li class="nav-item">
-          <a class="nav-link" href="#">Advertising</a>
-          </li>
-          <% if account_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Logout", destroy_account_session_path, method: :delete, class: "nav-link"%>
-          </li>
-          <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_account_session_path, class: "nav-link"%>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_account_registration_path, class: "nav-link"%>
-          </li>
-          <% end %>
-          
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-        </form>
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <% if account_signed_in? %>
+        <li class="nav-item active">
+        <%= link_to "Dashboard", dashboard_path, class: "nav-link px-2 text-secondary" %>
+        </li>
+        <%else%>
+        <li class="nav-item active">      
+          <%= link_to "Home", root_path, class: "nav-link px-2 text-secondary" %>
+        </li>
+        <%end%>          
+        <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+        <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+      </ul>
+
+      <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+
+      <div class="text-end">
+        <% if account_signed_in? %>          
+            <%= link_to "Logout", destroy_account_session_path, class: "btn btn-outline-warning", method: :delete %>          
+          <% else %>          
+            <%= link_to "Login", new_account_session_path, class: "btn btn-outline-success" %>                  
+            <%= link_to "Sign Up", new_account_registration_path, class: "btn btn-outline-primary" %>
+        <% end %>        
       </div>
-    </nav>
+    </div>
+  </div>
+</header>
