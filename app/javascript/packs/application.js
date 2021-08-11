@@ -4,13 +4,21 @@
 // that code so it'll be compiled.
 
 import Rails from "@rails/ujs"
+import 'bootstrap'
 
-var JQuery = require("jquery")
-global.$ = global.JQuery = jQuery
-window.$ = window.JQuery = jQuery
+// var JQuery = require("jquery");
+// global.$ = global.JQuery = jQuery
+// window.$ = window.JQuery = jQuery
 
-require("bootstrap");
 
+// include bootstrap css
+// require("bootstrap");
+
+// include properties.js
 require("../includes/properties");
+
+// include jquery.js and popper.js
+// require("jquery");
+// require("popper");
 
 Rails.start()
