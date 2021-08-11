@@ -5,7 +5,11 @@
 
 import Rails from "@rails/ujs"
 
-require("jquery");
-require("./icludes/properties");
+var JQuery = require("jquery")
+global.$ = global.JQuery = jQuery
+window.$ = window.JQuery = jQuery
+
+require("bootstrap");
+require("../includes/properties");
 
 Rails.start()
