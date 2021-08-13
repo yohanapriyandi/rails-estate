@@ -5,6 +5,12 @@
 
 import Rails from "@rails/ujs"
 import 'bootstrap'
+import '@fortawesome/fontawesome-free'
+import '@fortawesome/fontawesome-free/scss/fontawesome'
+import '@fortawesome/fontawesome-free/scss/brands'
+import '@fortawesome/fontawesome-free/scss/solid'
+import '@fortawesome/fontawesome-free/scss/regular'
+import '@fortawesome/fontawesome-free/scss/v4-shims'
 
 // var JQuery = require("jquery");
 // global.$ = global.JQuery = jQuery

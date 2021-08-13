@@ -6,13 +6,9 @@ class Account < ApplicationRecord
 
   has_many :properties
 
-  mount_uploader :image, PhotoUploader
+  mount_uploader :image, ProfilePictureUploader
 
   def full_name
     "#{first_name} #{last_name}"
-  end
-
-  def company
-    "test company"
-  end
+  end 
 end
