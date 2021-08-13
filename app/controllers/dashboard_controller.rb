@@ -7,13 +7,16 @@ class DashboardController < ApplicationController
   # def properties
   # end
 
-  # def reports
+ # def reports
   # end
+
+  def profile
+    @account = Account.find(params[:id])
+  end
 
   private
  
     def set_sidebar
       @show_sidebar = true
     end
-
 end
