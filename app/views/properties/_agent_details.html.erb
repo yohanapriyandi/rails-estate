@@ -4,12 +4,29 @@
     </div>    
     <h3 class="h4 m-0" ><%= @agent.full_name %></h3>
     <p><%= @agent.company %></p>
-    <div class="d-grid gap-2 mb-4">                
-        <button class="btn btn-primary text-uppercase" id="showPhone" data_phone="<%= @agent.phone %>">
-            <i class="fas fa-phone me-2"></i>
-            <span>Call</span>
-        </button>
+    <div class="row">
+        <div class="col-12 d-grid gap-2 mb-2">
+            <button class="btn btn-block btn-primary text-uppercase mb-3" id="showPhone" data_phone="<%= @agent.phone %>">
+                <i class="fas fa-phone me-2"></i>
+                <span>08xx</span>
+            </button>
+        </div>
     </div>
-    <%= link_to "Profile", profile_path(@agent.id), class: "btn btn-info text-uppercase" %>
-    <%= link_to "Email", profile_path(@agent.id), class: "btn btn-success text-uppercase" %>
+
+    <div class="row">        
+        <div class="col-md-6 d-grid gap-2">
+            <%= link_to profile_path(@agent.id)  do%>   
+            <button class="btn btn-block btn-success text-uppercase" data-bs-toggle="modal" data-bs-target="#contact-modal">
+                <i class="fas fa-user me-2"></i>
+                <span>Profile</span>
+            </button>            
+            <% end %>            
+        </div>
+        <div class="col-md-6 d-grid gap-2">
+            <button class="btn btn-block btn-primary text-uppercase" data-bs-toggle="modal" data-bs-target="#contact-modal">
+                <i class="fas fa-envelope me-2"></i>
+                <span>Email</span>
+            </button>
+        </div>        
+    </div>    
 </div>
