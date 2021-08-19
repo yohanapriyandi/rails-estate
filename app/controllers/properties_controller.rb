@@ -61,6 +61,28 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def email_agent
+    # trigger email send
+    agent_id   = params[:agent_id]
+    first_name = params[:first_name]
+    last_name  = params[:last_name]
+    email      = params[:email]
+    message    = params[:message]
+
+    ContactMailer.email_agent( agent_id, first_name, last_name, email, message ).deliver_now
+    
+    # logger.debug "Agent ID: #{agent_id}"
+    # logger.debug "First Name: #{first_name}"
+    # logger.debug "Last Name: #{last_name}"
+    # logger.debug "Email: #{email}"
+    # logger.debug "Message: #{message}"
+
+    # response to script
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property

@@ -1,0 +1,11 @@
+<p> Hi <%= @agent.first_name %>,</p>
+
+<p> you have a new message from RailsEstate.</p>
+
+<p>
+    Firstname: <%= @first_name %> <br/>
+    Lastname: <%= @last_name %> <br/>
+    Email: <%= @email %> <br/>
+</p>
+
+<%= simple_format @message %>
