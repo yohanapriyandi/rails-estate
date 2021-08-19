@@ -8,5 +8,5 @@ $(function(){
         } else {
             $(this).text("Show more");
         }
-    })        
+    });    
 });
