@@ -4,10 +4,12 @@
     </div>    
     <h3 class="h4 m-0" ><%= @agent.full_name %></h3>
     <p><%= @agent.company %></p>
-    <div class="d-grid gap-2 mb-2">                
-        <button class="btn btn-info text-uppercase"><i class="fas fa-phone"></i></button>
+    <div class="d-grid gap-2 mb-4">                
+        <button class="btn btn-primary text-uppercase" id="showPhone" data_phone="<%= @agent.phone %>">
+            <i class="fas fa-phone me-2"></i>
+            <span>Call</span>
+        </button>
     </div>
-    <button class="btn btn-info text-uppercase">Call</button>
-
-    <button class="btn btn-success text-uppercase">Email</button>
+    <%= link_to "Profile", profile_path(@agent.id), class: "btn btn-info text-uppercase" %>
+    <%= link_to "Email", profile_path(@agent.id), class: "btn btn-success text-uppercase" %>
 </div>
