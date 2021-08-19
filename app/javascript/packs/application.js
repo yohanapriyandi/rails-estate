@@ -26,6 +26,7 @@ global.toastr = toastr;
 
 // include properties.js
 require("../includes/properties");
+require("../includes/agents");
 
 // include jquery.js and popper.js
 // require("jquery");
