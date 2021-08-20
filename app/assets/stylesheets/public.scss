@@ -1,9 +1,17 @@
+body {
+    min-height: 75rem;
+}
+
 #notifications{
     display: none;
 }
 
 .btn {
     margin-top: 0px;
+}
+
+main>.container {    
+    padding: 60px 15px 0;
 }
 
 #main-header {
